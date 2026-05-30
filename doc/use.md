@@ -1,53 +1,15 @@
-# Nodejs websocket consumer pulsar msg sdk example
+# nodejs websocket consumer pulsar msg sdk example
+##  Dependent packages
++ `crypto-js`: ^4.0.0
++ `ws`: ^7.4.5
 
-## Environment
-
-+ Nodejs >= 12.0
-+ yarn
-
-## Start
-
-1. Install
-```bash
-yarn
-```
-
-2. Build
-```bash
-yarn build
-```
-
-3. Publish
-```bash
-yarn deploy
-```
-
-## Run example
-
-1. Install
-```bash
-yarn
-```
-
-2. Config your accessId and accessKey in `example/index.js`
-
+## Required parameters
 ```js
-const client = new TuyaWebsocket({
-  accessId: "your accessId",
-  accessKey: "your accessKey",
-  url: TuyaWebsocket.URL.CN,
-  env: TuyaWebsocket.env.PROD,
-  maxRetryTimes: 100,
-});
+accessId = ""
+accessKey = ""
 ```
 
-3. Start
-```bash
-yarn example
-```
-
-## Example code
-
+## example
 ```js
 import TuyaWebsocket from "xxx";
 
@@ -90,4 +52,12 @@ client.error((ws, error) => {
 
 client.start() // 开始接收消息
 
+```
+
+## Process the messages you receive，business logic is implemented in this method
+```js
+client.message((ws, message) => {
+  client.ackMessage(message.messageId);
+  console.log('message', message);
+});
 ```

@@ -1,0 +1,1 @@
+worker: npm run build && node example/index.js
