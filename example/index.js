@@ -3,7 +3,7 @@ const axios = require('axios');
 
 const ACCESS_ID = '7rxhc4cpy3vddqgyjcyj';
 const ACCESS_SECRET = '57d0a368aeb54f8498e3bb2a89a8c78a';
-const N8N_WEBHOOK = 'https://dlight-ai.app.n8n.cloud/webhook/s1-motion';
+const N8N_WEBHOOK = 'https://dlight-ai-test.app.n8n.cloud/webhook/s1-motion';
 const PIR_DEVICE_ID = 'a305baa68d482cc669q6yb';
 
 const lastTriggerTime = {};
